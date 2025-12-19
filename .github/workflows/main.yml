@@ -33,9 +33,9 @@ jobs:
       uses: ./
       with:
           kernel-url: https://github.com/LineageOS/android_kernel_xiaomi_sm6250
-          kernel-dir: false
+          kernel-dir: kernel
           kernel-branch: lineage-22.2
-          config: vendor/xiaomi/miatoll_defconfig
+          config: miatoll_defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
