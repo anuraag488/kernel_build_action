@@ -6,8 +6,10 @@ on:
       - '.github/workflows/main.yml'
       - 'action.yml'
 
+
   pull_request:
   workflow_dispatch:
+
 
 jobs:
   ci-test:
@@ -18,6 +20,7 @@ jobs:
     permissions:
       contents: write
 
+
     steps:
     - name: Checkout
       uses: actions/checkout@v6
@@ -25,17 +28,18 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
 
+
     - name: Build Kernel
       uses: ./
       with:
-          kernel-url: https://github.com/AcmeUI-Devices/android_kernel_xiaomi_cas
-          kernel-dir: msm-4.19
-          kernel-branch: taffy
-          config: cas_defconfig
+          kernel-url: https://github.com/LineageOS/android_kernel_xiaomi_sm6250
+          kernel-dir: false
+          kernel-branch: lineage-22.2
+          config: vendor/xiaomi/miatoll_defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
-          ksu: true
+          ksu: false
           ksu-version: main
           android-version: 12
           aosp-clang-version: r383902
