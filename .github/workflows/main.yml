@@ -32,7 +32,7 @@ jobs:
     - name: Build Kernel
       uses: ./
       with:
-          kernel-url: https://github.com/LineageOS/android_kernel_xiaomi_sm6250
+          kernel-url: https://github.com/anuraag488/android_kernel_xiaomi_sm6250
           kernel-dir: kernel
           kernel-branch: lineage-22.2
           config: vendor/xiaomi/miatoll_defconfig
